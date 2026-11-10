@@ -20,7 +20,7 @@ https://github.com/QBitLeap/umbrel-app-store
 The store is not ready until its image lock contains published registry
 manifest digests and the complete Mainnet/Testnet4 integration checks pass.
 Local image configuration IDs are not downloadable registry references.
-Indexing starts paused. Enable INDEX_ENABLED in app settings after selecting a ready Core instance.
+Indexing starts automatically when the matching Core instance is available.
 
 The dashboard accepts a refresh interval in whole minutes, with a one-minute
 default and minimum. The choice is saved in this browser, hidden pages stop
@@ -29,8 +29,7 @@ enabled indexing reports its current block and the selected node's block height.
 
 ## Inscribe from the Umbrel terminal
 
-Set `QBIT_WALLET_ENABLED=1` in the matching Core app and wait for its qord
-indexer to catch up. Launch the qord shell with the directory containing
+Wait for the qord indexer to catch up with its Core app. Launch the qord shell with the directory containing
 your inscription files.
 
 ```sh
