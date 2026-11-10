@@ -1,0 +1,20 @@
+{
+  "format": "umbrel-icon-provenance-v1",
+  "icon": "icon.svg",
+  "sourceKind": "reviewed upstream SVG",
+  "upstreamRepository": "https://github.com/djh58/qord",
+  "upstreamRevision": "a4febe49f10eb6ba10ded6ab42098a5bec7be914",
+  "upstreamAsset": "static/favicon.svg",
+  "sourceSha256": "b3d79ac762c5c0be09afd83d0c85040607c402f83499635d6c82d8b455ab3b64",
+  "iconSha256": "ed997b112803031e770824c047d43d12eb21f9ebcf38a5a0bb32720e8ea2aedd",
+  "svgType": "native vector",
+  "vectorArtwork": true,
+  "viewport": [
+    512,
+    512
+  ],
+  "geometryUnchanged": true,
+  "adaptation": "Root viewport normalized; accessible title added; shapes/styles unchanged",
+  "licenseAndNotices": "assets/upstream/",
+  "inlineAdaptationNotice": true
+}

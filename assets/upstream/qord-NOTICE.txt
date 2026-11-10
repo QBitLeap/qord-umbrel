@@ -1,0 +1,88 @@
+qord
+====
+
+qord is a port of ord to the qbit chain.
+
+Source: https://github.com/djh58/qord
+
+qord is distributed under CC0-1.0. See LICENSE.
+
+
+Upstream: ord
+-------------
+
+qord is derived from ord 0.29.1 by the Ord Maintainers and contributors
+(https://github.com/ordinals/ord). ord is dedicated to the public domain under
+CC0-1.0. qord keeps ord's Ordinal theory, inscription envelope, rune protocol,
+explorer, API, and test work. CHANGELOG.md and the Git history record the
+upstream contributors.
+
+The qbit-specific changes in this repository are distributed under the same
+CC0-1.0 terms. Those changes cover qbit chain parameters, block decoding,
+addresses, P2MR and post-quantum signing, policy, wallet recovery, and
+documentation.
+
+bip.mediawiki is the Ordinal Numbers BIP draft by Casey Rodarmor, which is in
+the public domain.
+
+
+Third-party files in this repository
+------------------------------------
+
+The following files are not covered by CC0-1.0. They keep their own licenses,
+and each file carries its notice in a header comment.
+
+* static/modern-normalize.css
+  modern-normalize v1.1.0, https://github.com/sindresorhus/modern-normalize
+  License: MIT, reproduced below.
+
+  MIT License
+
+  Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+
+* static/book.svg, static/box-archive.svg, static/clock.svg,
+  static/cubes.svg, static/diagram-project.svg, static/gem.svg,
+  static/github.svg, static/images.svg, static/magnifying-glass.svg
+  Font Awesome Free 6.4.2 icons by Fonticons, Inc., https://fontawesome.com
+  License: CC BY 4.0 (icons). See https://fontawesome.com/license/free.
+
+The explorer's preview pages load marked, highlight.js, PDF.js, and
+model-viewer from public CDNs at runtime. qord does not redistribute them.
+
+
+Third-party dependencies in release artifacts
+---------------------------------------------
+
+Release archives and container images include THIRD-PARTY-NOTICES.txt and a
+CycloneDX SBOM (qord.cdx.json). bin/generate-release-metadata generates both
+from the locked Cargo dependency graph for each target. They include the
+license texts for every compiled dependency, including:
+
+* qbit-libbitcoinpqc 0.3.2 (https://github.com/Qbit-Org/qbit-libbitcoinpqc)
+  License: MIT. Copyright (c) 2024 Hunter Beast @ Surmount Systems.
+
+* The SPHINCS+ reference implementation vendored in qbit-libbitcoinpqc
+  (https://github.com/sphincs/sphincsplus).
+  License: (LicenseRef-SPHINCS-PLUS-Public-Domain OR CC0-1.0 OR 0BSD OR MIT-0)
+  AND MIT.
+
+release/qbit-pqc-license-inventory.json pins the vendored files and license
+texts for those two components by SHA-256 hash.

@@ -1,0 +1,7 @@
+{
+  "format": "reviewed-upstream-source-v1",
+  "repository": "https://github.com/djh58/qord.git",
+  "commit": "a4febe49f10eb6ba10ded6ab42098a5bec7be914",
+  "patches": [],
+  "policy": "Review, test and pin upstream updates before release"
+}

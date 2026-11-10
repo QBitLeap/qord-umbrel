@@ -1,0 +1,8 @@
+Standalone Umbrel wrapper
+Copyright 2026 LEAP contributors
+
+Wrapper code: MIT; see LICENSE.
+
+qord source and icon preserve the upstream CC0-1.0 license and notices under assets/upstream. Native dependencies retain their own licenses; review the upstream dependency notices when distributing binaries.
+
+Container base images and language/runtime dependencies retain their upstream licenses.
