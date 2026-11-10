@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import re
 import sys
+import tomllib
 
 
 def built_packages(messages):
@@ -22,11 +23,14 @@ def collect(metadata, output, selected=None, reviewed=None):
     output.mkdir(parents=True)
     records, total = [], 0
     supplements = {}
+    locked = {}
     if reviewed is not None:
         manifest = json.loads((reviewed / "manifest.json").read_text())
         if manifest.get("format") != "reviewed-cargo-notices-v1":
             raise ValueError("Unrecognized reviewed notice inventory")
         supplements = {(p["name"], p["version"]): p for p in manifest["packages"]}
+        locked = {(p["name"], p["version"], p.get("source")): p.get("checksum")
+                  for p in tomllib.loads((workspace / "Cargo.lock").read_text())["package"]}
     known = {p["id"] for p in metadata["packages"] if "id" in p}
     if selected is not None and (not selected or selected - known):
         raise ValueError("Built packages differ from the locked Cargo metadata")
@@ -62,7 +66,7 @@ def collect(metadata, output, selected=None, reviewed=None):
             files.append({"file": target.relative_to(output).as_posix(), "sha256": hashlib.sha256(data).hexdigest()})
         supplement = supplements.get((package["name"], package["version"])) if not files else None
         if supplement is not None:
-            checksum = json.loads((root / ".cargo-checksum.json").read_text()).get("package")
+            checksum = locked.get((package["name"], package["version"], package.get("source")))
             if (not str(package.get("source", "")).startswith("registry+")
                     or checksum != supplement["archiveSha256"]
                     or package.get("license") != supplement["declaredLicense"]):

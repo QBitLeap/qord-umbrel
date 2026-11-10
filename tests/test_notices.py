@@ -18,7 +18,13 @@ class NoticeTests(unittest.TestCase):
             crate, bundle = root / "crate", root / "bundle"
             crate.mkdir()
             bundle.mkdir()
-            (crate / ".cargo-checksum.json").write_text(json.dumps({"package": "a" * 64}))
+            workspace = root / "workspace"
+            workspace.mkdir()
+            lock = workspace / "Cargo.lock"
+            lock_text = ('version = 4\n[[package]]\nname = "example"\nversion = "1"\n'
+                         'source = "registry+https://github.com/rust-lang/crates.io-index"\n'
+                         'checksum = "' + "a" * 64 + '"\n')
+            lock.write_text(lock_text)
             text = b"Complete retained license text"
             (bundle / "LICENSE.txt").write_bytes(text)
             manifest = {"format": "reviewed-cargo-notices-v1", "packages": [{
@@ -35,10 +41,10 @@ class NoticeTests(unittest.TestCase):
             self.assertEqual(report["packagesWithoutNoticeFiles"], [])
             copied = report["packages"][0]["noticeFiles"][0]["file"]
             self.assertEqual((root / "valid" / copied).read_bytes(), text)
-            (crate / ".cargo-checksum.json").write_text(json.dumps({"package": "b" * 64}))
+            lock.write_text(lock_text.replace("a" * 64, "b" * 64))
             with self.assertRaises(ValueError):
                 notices.collect(metadata, root / "changed-archive", {"built"}, bundle)
-            (crate / ".cargo-checksum.json").write_text(json.dumps({"package": "a" * 64}))
+            lock.write_text(lock_text)
             (bundle / "LICENSE.txt").write_text("Changed text")
             with self.assertRaises(ValueError):
                 notices.collect(metadata, root / "changed-text", {"built"}, bundle)
