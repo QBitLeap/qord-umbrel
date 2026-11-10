@@ -113,8 +113,10 @@ def sqlite_snapshot(directory, protocol, chain, *, catalog=False, offset=0, limi
 
 def local_qord(path):
     opener = build_opener(ProxyHandler({}), NoRedirect())
+    auth = base64.b64encode(("index:" + os.environ["INDEX_LOCAL_TOKEN"]).encode()).decode()
     with opener.open(Request("http://127.0.0.1:8787" + path,
-                            headers={"Accept": "application/json"}), timeout=5) as response:
+                            headers={"Accept": "application/json", "Authorization": "Basic " + auth}),
+                     timeout=5) as response:
         body = response.read(MAX_RESPONSE + 1)
     if len(body) > MAX_RESPONSE:
         raise CoreUnavailable("Indexer response exceeds read limit")
@@ -240,6 +242,7 @@ def start_indexer(protocol, chain):
         config = {"chain": "mainnet" if chain == "main" else chain,
                   "qbit_rpc_url": "http://127.0.0.1:8081/", "qbit_rpc_username": "reader",
                   "qbit_rpc_password": os.environ["INDEX_LOCAL_TOKEN"], "data_dir": "/data",
+                  "server_username": "index", "server_password": os.environ["INDEX_LOCAL_TOKEN"],
                   "index_addresses": True, "index_sats": False, "index_runes": False,
                   "index_transactions": False, "index_cache_size": 134217728,
                   "qbit_rpc_limit": 2, "commit_interval": 100}
@@ -250,7 +253,7 @@ def start_indexer(protocol, chain):
             os.chmod(path, 0o600)
             json.dump(config, stream)
         command = ["/usr/local/bin/qord", "--config", str(path), "--config-dir", "/data",
-                   "server", "--address", "127.0.0.1", "--http-port", "8787"]
+                   "server", "--address", "0.0.0.0", "--http-port", "8787"]
     # Keep the single-writer advisory lock held across the exec.
     os.set_inheritable(lock.fileno(), True)
     os.execvp(command[0], command)

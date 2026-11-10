@@ -27,6 +27,30 @@ default and minimum. The choice is saved in this browser, hidden pages stop
 refreshing, and requests never overlap. Paused indexing is shown explicitly;
 enabled indexing reports its current block and the selected node's block height.
 
+## Inscribe from the Umbrel terminal
+
+Set `QBIT_WALLET_ENABLED=1` in the matching Core app and wait for its qord
+indexer to catch up. Launch the qord shell with the directory containing
+your inscription files.
+
+```sh
+sudo sh /home/umbrel/umbrel/app-data/qbitleap-core-main/qbit-terminal.sh qord main /path/to/inscription-files
+```
+
+For Testnet4, replace both network names with `testnet4`. The shell connects
+to your Core and qord index on that network.
+
+```sh
+qord wallet create
+qord wallet receive
+qord wallet inscribe --file artwork.png --fee-rate 1 --dry-run
+```
+
+Create the wallet once, back it up and fund the receive address before
+inscribing. Choose a network fee rate and remove `--dry-run` to submit.
+Keep the qord wallet database for pending reveal recovery. See the
+[upstream wallet guide](https://github.com/djh58/qord/blob/a4febe49f10eb6ba10ded6ab42098a5bec7be914/docs/src/guides/wallet.md).
+
 ## Source checks
 
 ```sh
