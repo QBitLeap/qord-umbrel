@@ -5,10 +5,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /src/qord
 COPY protocol/ ./
 ENV GIT_BRANCH=main GIT_COMMIT=a4febe49f10eb6ba10ded6ab42098a5bec7be914 CARGO_BUILD_JOBS=2 CMAKE_BUILD_PARALLEL_LEVEL=2
-RUN cargo build --locked --release --bin qord
+RUN cargo build --locked --release --bin qord --message-format=json > /tmp/qord-build.jsonl
 COPY build/collect_notices.py /tmp/collect_notices.py
+COPY build/notices /tmp/reviewed-notices
 RUN cargo metadata --locked --format-version=1 > /tmp/cargo-metadata.json \
-    && python3 /tmp/collect_notices.py /tmp/cargo-metadata.json /dependency-notices
+    && python3 /tmp/collect_notices.py /tmp/cargo-metadata.json /dependency-notices /tmp/qord-build.jsonl /tmp/reviewed-notices
 
 FROM debian:bookworm-20261104-slim@sha256:c67e92c8099ba22853ab4cfda7cfb494d253d6012ca82dee98ba8976772af018
 RUN apt-get update && apt-get install -y --no-install-recommends python3 ca-certificates libssl3 libstdc++6 \

@@ -88,6 +88,9 @@ def prepare(source, output):
             copy(ROOT / name, output / name)
     if PROTOCOL == "qord":
         copy(ROOT / "scripts/collect_notices.py", output / "build/collect_notices.py")
+        for notice in (ROOT / "assets/dependency-notices").rglob("*"):
+            if notice.is_file():
+                copy(notice, output / "build/notices" / notice.relative_to(ROOT / "assets/dependency-notices"))
     for p in (ROOT / "app").rglob("*"):
         if p.is_file() and "__pycache__" not in p.parts and p.suffix != ".pyc":
             copy(p, output / "app" / p.relative_to(ROOT / "app"))

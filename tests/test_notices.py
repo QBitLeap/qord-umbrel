@@ -12,6 +12,57 @@ spec.loader.exec_module(notices)
 
 
 class NoticeTests(unittest.TestCase):
+    def test_reviewed_supplement_requires_exact_archive_identity_and_text_hash(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            crate, bundle = root / "crate", root / "bundle"
+            crate.mkdir()
+            bundle.mkdir()
+            (crate / ".cargo-checksum.json").write_text(json.dumps({"package": "a" * 64}))
+            text = b"Complete retained license text"
+            (bundle / "LICENSE.txt").write_bytes(text)
+            manifest = {"format": "reviewed-cargo-notices-v1", "packages": [{
+                "name": "example", "version": "1", "declaredLicense": "MIT",
+                "archiveSha256": "a" * 64, "basis": "Reviewed upstream text",
+                "files": [{"file": "LICENSE.txt", "sha256": hashlib.sha256(text).hexdigest(),
+                           "source": "https://example.com/upstream/LICENSE"}]}]}
+            (bundle / "manifest.json").write_text(json.dumps(manifest))
+            metadata = {"workspace_root": str(root / "workspace"), "packages": [{
+                "id": "built", "name": "example", "version": "1", "license": "MIT",
+                "source": "registry+https://github.com/rust-lang/crates.io-index",
+                "manifest_path": str(crate / "Cargo.toml")} ]}
+            report = notices.collect(metadata, root / "valid", {"built"}, bundle)
+            self.assertEqual(report["packagesWithoutNoticeFiles"], [])
+            copied = report["packages"][0]["noticeFiles"][0]["file"]
+            self.assertEqual((root / "valid" / copied).read_bytes(), text)
+            (crate / ".cargo-checksum.json").write_text(json.dumps({"package": "b" * 64}))
+            with self.assertRaises(ValueError):
+                notices.collect(metadata, root / "changed-archive", {"built"}, bundle)
+            (crate / ".cargo-checksum.json").write_text(json.dumps({"package": "a" * 64}))
+            (bundle / "LICENSE.txt").write_text("Changed text")
+            with self.assertRaises(ValueError):
+                notices.collect(metadata, root / "changed-text", {"built"}, bundle)
+
+    def test_only_built_packages_are_selected_and_unknown_artifacts_are_refused(self):
+        selected = notices.built_packages([
+            {"reason": "compiler-artifact", "package_id": "built"},
+            {"reason": "build-script-executed", "package_id": "built"},
+            {"reason": "compiler-message", "package_id": "unbuilt"}])
+        self.assertEqual(selected, {"built"})
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            crate = root / "crate"
+            crate.mkdir()
+            (crate / "LICENSE").write_text("Upstream text")
+            metadata = {"workspace_root": str(crate), "packages": [
+                {"id": "built", "name": "used", "version": "1", "manifest_path": str(crate / "Cargo.toml")},
+                {"id": "unbuilt", "name": "unused", "version": "2", "manifest_path": str(root / "unused/Cargo.toml")}]}
+            report = notices.collect(metadata, root / "output", selected)
+            self.assertEqual([p["name"] for p in report["packages"]], ["used"])
+            self.assertEqual(report["packagesWithoutNoticeFiles"], [])
+            with self.assertRaises(ValueError):
+                notices.collect(metadata, root / "unknown", {"unknown"})
+
     def test_workspace_license_is_retained_without_traversal_and_missing_text_is_reported(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)

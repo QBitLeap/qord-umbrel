@@ -1,0 +1,281 @@
+{
+  "format": "reviewed-cargo-notices-v1",
+  "packages": [
+    {
+      "name": "alloc-stdlib",
+      "version": "0.3.0",
+      "declaredLicense": "BSD-3-Clause",
+      "archiveSha256": "0b5c1865780388bfa186411ab5f247819487fc4864c6e9c3106611fa347586e1",
+      "basis": "Complete license texts from the source revision recorded by the published crate",
+      "files": [
+        {
+          "file": "packages/alloc-stdlib-0.3.0/Cargo.toml",
+          "sha256": "bd73bb44d77b96ac83b93eed2e47d8c8cac86dc2df39602b67e783675ba01229",
+          "source": "https://static.crates.io/crates/alloc-stdlib/alloc-stdlib-0.3.0.crate#Cargo.toml"
+        },
+        {
+          "file": "packages/alloc-stdlib-0.3.0/LICENSE",
+          "sha256": "c0c56f26d9c051cac4d200c34c84e7ae9aaa853e01a982a1df08b09931e518ae",
+          "source": "https://raw.githubusercontent.com/dropbox/rust-alloc-no-stdlib/0a81fd6928ea3b33c8cd484aa4575d50ffb98012/LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "asn1-rs-impl",
+      "version": "0.2.0",
+      "declaredLicense": "MIT/Apache-2.0",
+      "archiveSha256": "7b18050c2cd6fe86c3a76584ef5e0baf286d038cda203eb6223df2cc413565f7",
+      "basis": "Complete license texts from the source revision recorded by the published crate",
+      "files": [
+        {
+          "file": "packages/asn1-rs-impl-0.2.0/Cargo.toml",
+          "sha256": "a631619d2ce5c7060ce03cbbfc08a45430350e55b700b8bb905ff4ecb2819a8e",
+          "source": "https://static.crates.io/crates/asn1-rs-impl/asn1-rs-impl-0.2.0.crate#Cargo.toml"
+        },
+        {
+          "file": "packages/asn1-rs-impl-0.2.0/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "source": "https://raw.githubusercontent.com/rusticata/asn1-rs/a20e5f7319c896737ad0f2557037817b91ad854f/LICENSE-APACHE"
+        },
+        {
+          "file": "packages/asn1-rs-impl-0.2.0/LICENSE-MIT",
+          "sha256": "a5c61b93b6ee1d104af9920cf020ff3c7efe818e31fe562c72261847a728f513",
+          "source": "https://raw.githubusercontent.com/rusticata/asn1-rs/a20e5f7319c896737ad0f2557037817b91ad854f/LICENSE-MIT"
+        }
+      ]
+    },
+    {
+      "name": "async-http-codec",
+      "version": "0.8.0",
+      "declaredLicense": "Apache-2.0 OR MIT",
+      "archiveSha256": "096146020b08dbc4587685b0730a7ba905625af13c65f8028035cdfd69573c91",
+      "basis": "Crate declares Apache-2.0 OR MIT but omits full license text; retained original package metadata plus standard Apache-2.0 text (selected alternative where applicable)",
+      "files": [
+        {
+          "file": "packages/async-http-codec-0.8.0/Cargo.toml",
+          "sha256": "fae3434c24ed64594eb776cca00147204f38706b426dc446339019562574bf3a",
+          "source": "https://static.crates.io/crates/async-http-codec/async-http-codec-0.8.0.crate#Cargo.toml"
+        },
+        {
+          "file": "standard/Apache-2.0.txt",
+          "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+          "source": "https://raw.githubusercontent.com/spdx/license-list-data/31846481de7ea17d92f2f46fad76abe58b2e9bb0/text/Apache-2.0.txt"
+        }
+      ]
+    },
+    {
+      "name": "async-web-client",
+      "version": "0.6.3",
+      "declaredLicense": "Apache-2.0 OR MIT",
+      "archiveSha256": "8caf502b44d6d4be6154ac33af012cbb5fef11e6066edcfb42834217fbaf501b",
+      "basis": "Crate declares Apache-2.0 OR MIT but omits full license text; retained original package metadata plus standard Apache-2.0 text (selected alternative where applicable)",
+      "files": [
+        {
+          "file": "packages/async-web-client-0.6.3/Cargo.toml",
+          "sha256": "559aae31acaa6f4b82dfbecb3cf0125efa9ee35f078c71844cc97f935bcbe1df",
+          "source": "https://static.crates.io/crates/async-web-client/async-web-client-0.6.3.crate#Cargo.toml"
+        },
+        {
+          "file": "standard/Apache-2.0.txt",
+          "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+          "source": "https://raw.githubusercontent.com/spdx/license-list-data/31846481de7ea17d92f2f46fad76abe58b2e9bb0/text/Apache-2.0.txt"
+        }
+      ]
+    },
+    {
+      "name": "base58ck",
+      "version": "0.1.101",
+      "declaredLicense": "CC0-1.0",
+      "archiveSha256": "365c0acd5b2e8dd0111a46c4faea83fb3cfb6e39a49a7c73a06e090db7b2eff0",
+      "basis": "Crate declares CC0-1.0 but omits full license text; retained original package metadata plus standard CC0-1.0 text (selected alternative where applicable)",
+      "files": [
+        {
+          "file": "packages/base58ck-0.1.101/Cargo.toml",
+          "sha256": "4651e8d8dfd66b20594dc208003bb87ed215932764af1a1d31e7954840a0ddfc",
+          "source": "https://static.crates.io/crates/base58ck/base58ck-0.1.101.crate#Cargo.toml"
+        },
+        {
+          "file": "standard/CC0-1.0.txt",
+          "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+          "source": "https://raw.githubusercontent.com/spdx/license-list-data/31846481de7ea17d92f2f46fad76abe58b2e9bb0/text/CC0-1.0.txt"
+        }
+      ]
+    },
+    {
+      "name": "bip322",
+      "version": "0.0.12",
+      "declaredLicense": "CC0-1.0",
+      "archiveSha256": "4f9b1a54d4ecc089e5b34766936d0b4970e842087d36642817b998d767705e41",
+      "basis": "Crate declares CC0-1.0 but omits full license text; retained original package metadata plus standard CC0-1.0 text (selected alternative where applicable)",
+      "files": [
+        {
+          "file": "packages/bip322-0.0.12/Cargo.toml",
+          "sha256": "20ce1a8e283a2257d21abd174618195ae7e240df60247ac1a934c39861de3321",
+          "source": "https://static.crates.io/crates/bip322/bip322-0.0.12.crate#Cargo.toml"
+        },
+        {
+          "file": "standard/CC0-1.0.txt",
+          "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+          "source": "https://raw.githubusercontent.com/spdx/license-list-data/31846481de7ea17d92f2f46fad76abe58b2e9bb0/text/CC0-1.0.txt"
+        }
+      ]
+    },
+    {
+      "name": "bitcoin",
+      "version": "0.32.102",
+      "declaredLicense": "CC0-1.0",
+      "archiveSha256": "bb0ce8bd5baaa0d303a19915a6d93afed161f528654e42da2a7a97d05c59499a",
+      "basis": "Crate declares CC0-1.0 but omits full license text; retained original package metadata plus standard CC0-1.0 text (selected alternative where applicable)",
+      "files": [
+        {
+          "file": "packages/bitcoin-0.32.102/Cargo.toml",
+          "sha256": "8abf38f45d22937499b43267eda7516bad3ba2ac3af94beb675a9a1fe4ecf8b9",
+          "source": "https://static.crates.io/crates/bitcoin/bitcoin-0.32.102.crate#Cargo.toml"
+        },
+        {
+          "file": "standard/CC0-1.0.txt",
+          "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+          "source": "https://raw.githubusercontent.com/spdx/license-list-data/31846481de7ea17d92f2f46fad76abe58b2e9bb0/text/CC0-1.0.txt"
+        }
+      ]
+    },
+    {
+      "name": "bitcoin-io",
+      "version": "0.1.101",
+      "declaredLicense": "CC0-1.0",
+      "archiveSha256": "bb5de036369d1ac59d3c1819ebc4d850f89466f5401c571a285b6ed564a4cb78",
+      "basis": "Crate declares CC0-1.0 but omits full license text; retained original package metadata plus standard CC0-1.0 text (selected alternative where applicable)",
+      "files": [
+        {
+          "file": "packages/bitcoin-io-0.1.101/Cargo.toml",
+          "sha256": "2ce40c95c8cfd768dda7b2aa10b00ccbc20738e8ebacfb7c03f3a70b35266b32",
+          "source": "https://static.crates.io/crates/bitcoin-io/bitcoin-io-0.1.101.crate#Cargo.toml"
+        },
+        {
+          "file": "standard/CC0-1.0.txt",
+          "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+          "source": "https://raw.githubusercontent.com/spdx/license-list-data/31846481de7ea17d92f2f46fad76abe58b2e9bb0/text/CC0-1.0.txt"
+        }
+      ]
+    },
+    {
+      "name": "bitcoin-units",
+      "version": "0.1.101",
+      "declaredLicense": "CC0-1.0",
+      "archiveSha256": "9cb95693f371d089a4b5b6fc41c6f3ea6e01ee8c15388335dfac8ea685173b51",
+      "basis": "Crate declares CC0-1.0 but omits full license text; retained original package metadata plus standard CC0-1.0 text (selected alternative where applicable)",
+      "files": [
+        {
+          "file": "packages/bitcoin-units-0.1.101/Cargo.toml",
+          "sha256": "d533f0b65f44ebc4b5473927be38768d4e72bb3d4e15efa96f74f183ed9db4e4",
+          "source": "https://static.crates.io/crates/bitcoin-units/bitcoin-units-0.1.101.crate#Cargo.toml"
+        },
+        {
+          "file": "standard/CC0-1.0.txt",
+          "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+          "source": "https://raw.githubusercontent.com/spdx/license-list-data/31846481de7ea17d92f2f46fad76abe58b2e9bb0/text/CC0-1.0.txt"
+        }
+      ]
+    },
+    {
+      "name": "bitcoin_hashes",
+      "version": "0.14.101",
+      "declaredLicense": "CC0-1.0",
+      "archiveSha256": "bca4c7abb40c8817d77403c880988cfd484f23ab2365726afb2f798363e2c4a2",
+      "basis": "Crate declares CC0-1.0 but omits full license text; retained original package metadata plus standard CC0-1.0 text (selected alternative where applicable)",
+      "files": [
+        {
+          "file": "packages/bitcoin_hashes-0.14.101/Cargo.toml",
+          "sha256": "7db5e2f64cd5d14d32df5631bfef8abdaed13544e03239aae80af68f5a208bfa",
+          "source": "https://static.crates.io/crates/bitcoin_hashes/bitcoin_hashes-0.14.101.crate#Cargo.toml"
+        },
+        {
+          "file": "standard/CC0-1.0.txt",
+          "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+          "source": "https://raw.githubusercontent.com/spdx/license-list-data/31846481de7ea17d92f2f46fad76abe58b2e9bb0/text/CC0-1.0.txt"
+        }
+      ]
+    },
+    {
+      "name": "boilerplate-macros",
+      "version": "0.0.4",
+      "declaredLicense": "CC0-1.0",
+      "archiveSha256": "2f528349f04c9c9dd1d966701799e89568d5e444333fe40ebdea716f97fe230b",
+      "basis": "Crate declares CC0-1.0 but omits full license text; retained original package metadata plus standard CC0-1.0 text (selected alternative where applicable)",
+      "files": [
+        {
+          "file": "packages/boilerplate-macros-0.0.4/Cargo.toml",
+          "sha256": "26487ac98344e370996bb5c8dfcf888d623f39599b99b2200f957ab298cc9864",
+          "source": "https://static.crates.io/crates/boilerplate-macros/boilerplate-macros-0.0.4.crate#Cargo.toml"
+        },
+        {
+          "file": "standard/CC0-1.0.txt",
+          "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+          "source": "https://raw.githubusercontent.com/spdx/license-list-data/31846481de7ea17d92f2f46fad76abe58b2e9bb0/text/CC0-1.0.txt"
+        }
+      ]
+    },
+    {
+      "name": "boilerplate-parser",
+      "version": "0.0.1",
+      "declaredLicense": "CC0-1.0",
+      "archiveSha256": "eed7480701ff0070a350769146a26927d8edac232896f0e367b5ff26c71b5b21",
+      "basis": "Crate declares CC0-1.0 but omits full license text; retained original package metadata plus standard CC0-1.0 text (selected alternative where applicable)",
+      "files": [
+        {
+          "file": "packages/boilerplate-parser-0.0.1/Cargo.toml",
+          "sha256": "878be53436570d673ac2ca656396d1bad3a8c146cf5dcbb971ad4ade8a3cad3c",
+          "source": "https://static.crates.io/crates/boilerplate-parser/boilerplate-parser-0.0.1.crate#Cargo.toml"
+        },
+        {
+          "file": "standard/CC0-1.0.txt",
+          "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+          "source": "https://raw.githubusercontent.com/spdx/license-list-data/31846481de7ea17d92f2f46fad76abe58b2e9bb0/text/CC0-1.0.txt"
+        }
+      ]
+    },
+    {
+      "name": "hex_lit",
+      "version": "0.1.1",
+      "declaredLicense": "MITNFA",
+      "archiveSha256": "3011d1213f159867b13cfd6ac92d2cd5f1345762c63be3554e84092d85a50bbd",
+      "basis": "Crate declares MITNFA but omits full license text; retained original package metadata plus standard MITNFA text (selected alternative where applicable)",
+      "files": [
+        {
+          "file": "packages/hex_lit-0.1.1/Cargo.toml",
+          "sha256": "b4ba1f8ba3e957e70bde8405d69be608dbae5e8bd408ec2af069b0eaba47c89e",
+          "source": "https://static.crates.io/crates/hex_lit/hex_lit-0.1.1.crate#Cargo.toml"
+        },
+        {
+          "file": "standard/MITNFA.txt",
+          "sha256": "d436716f7a05466f52443893079761c8a88f4967d0ef490fabc0a1c9ef1c3a1d",
+          "source": "https://raw.githubusercontent.com/spdx/license-list-data/31846481de7ea17d92f2f46fad76abe58b2e9bb0/text/MITNFA.txt"
+        }
+      ]
+    },
+    {
+      "name": "yasna",
+      "version": "0.5.2",
+      "declaredLicense": "MIT OR Apache-2.0",
+      "archiveSha256": "e17bb3549cc1321ae1296b9cdc2698e2b6cb1992adfa19a8c72e5b7a738f44cd",
+      "basis": "Complete license texts from the source revision recorded by the published crate",
+      "files": [
+        {
+          "file": "packages/yasna-0.5.2/Cargo.toml",
+          "sha256": "21d71ce98bb98c63b1c3f4687e77d0f6dd2a20c6deba1c8fe336a97772cb9a66",
+          "source": "https://static.crates.io/crates/yasna/yasna-0.5.2.crate#Cargo.toml"
+        },
+        {
+          "file": "packages/yasna-0.5.2/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "source": "https://raw.githubusercontent.com/qnighy/yasna.rs/b7e65f9a4c317494cce2d18ea02b3d6eaaea7985/LICENSE-APACHE"
+        },
+        {
+          "file": "packages/yasna-0.5.2/LICENSE-MIT",
+          "sha256": "2a7df90e60fd5512b8bca35d3ce90e068f21c52d962855053fd1d9e2e7ca0f16",
+          "source": "https://raw.githubusercontent.com/qnighy/yasna.rs/b7e65f9a4c317494cce2d18ea02b3d6eaaea7985/LICENSE-MIT"
+        }
+      ]
+    }
+  ]
+}
