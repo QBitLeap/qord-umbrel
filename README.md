@@ -1,5 +1,9 @@
 # qord for Umbrel
 
+| macOS | Windows | Linux | Umbrel |
+| --- | --- | --- | --- |
+| [<img alt="qord for macOS" src="https://raw.githubusercontent.com/QBitLeap/umbrel-app-store/f02d8c427c868dd1fbbf06bc70b1cea238bca807/assets/platform-icons/qord/macos.png" width="72">](https://github.com/djh58/qord/releases/tag/qord/v0.1.0) | [<img alt="qord for Windows" src="https://raw.githubusercontent.com/QBitLeap/umbrel-app-store/f02d8c427c868dd1fbbf06bc70b1cea238bca807/assets/platform-icons/qord/windows.png" width="72">](https://github.com/djh58/qord/releases/tag/qord/v0.1.0) | [<img alt="qord for Linux" src="https://raw.githubusercontent.com/QBitLeap/umbrel-app-store/f02d8c427c868dd1fbbf06bc70b1cea238bca807/assets/platform-icons/qord/linux.png" width="72">](https://github.com/djh58/qord/releases/tag/qord/v0.1.0) | [<img alt="qord for Umbrel" src="https://raw.githubusercontent.com/QBitLeap/umbrel-app-store/f02d8c427c868dd1fbbf06bc70b1cea238bca807/assets/platform-icons/qord/umbrel.png" width="72">](https://github.com/QBitLeap/umbrel-app-store) |
+
 Independent qord app source for umbrelOS 2.0 or newer. This is an amd64
 prerelease. Published images have passed isolated Mainnet/Testnet4 integration;
 managed Umbrel installation and real-chain operation acceptance remain pending.
